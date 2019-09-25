@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    <title>Nidolai.IO | Open Source Projects</title>
+    <meta name="author" content="Nidolai">
+    <meta name="description" content="Nidolai.IO is the home for all Nidolai's open source projects.">
+    <meta name="keywords" content="open source, projects, nidolai">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Nidolai.IO">
+    <meta name="twitter:image" content="/assets/img/icon.png">
+    <meta name="twitter:description" content="Nidolai.IO is the home for all Nidolai's open source projects.">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/assets/img/icon.png">
+    <meta property="og:description" content="Nidolai.IO is the home for all Nidolai's open source projects.">
+    
+    <!-- Style -->
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/img/icon.png">
+    <link rel="stylesheet" type="text/css" href="/assets/css/nidolai.io.css">
+</head>
+<body>
+
+    <h1>Nidolai.IO</h1>
+
+    <label class="switch">
+        <input type="checkbox" />
+        <span class="slider"></span>
+    </label>
+
+    <div class="repos" id="repos-div">Loading&hellip;</div>
+
+    <template id="repo-template">
+        <div class="repo">
+            <a class="name" target="_blank"></a>
+            <p class="desc"></p>
+            <p class="info">
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="octicon" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M9.5 3L8 4.5 11.5 8 8 11.5 9.5 13 14 8 9.5 3zm-5 0L0 8l4.5 5L6 11.5 2.5 8 6 4.5 4.5 3z"/></svg>
+                    <span class="language"></span>
+                </span>
+                
+                <span class="space">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="octicon" width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg>
+                    <span class="watch"></span>
+                </span>
+
+                <span class="space">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="octicon" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"/></svg>
+                    <span class="star"></span>
+                </span>
+
+                <span class="space">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="octicon" width="10" height="16" viewBox="0 0 10 16"><path fill-rule="evenodd" d="M8 1a1.993 1.993 0 0 0-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 0 0 2 1a1.993 1.993 0 0 0-1 3.72V6.5l3 3v1.78A1.993 1.993 0 0 0 5 15a1.993 1.993 0 0 0 1-3.72V9.5l3-3V4.72A1.993 1.993 0 0 0 8 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
+                    <span class="fork"></span>
+                </span>
+
+                <span class="space">
+                    <a class="homepage" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" class="octicon" width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M16 9l-3-3V2h-2v2L8 1 0 9h2l1 5c0 .55.45 1 1 1h8c.55 0 1-.45 1-1l1-5h2zm-4 5H9v-4H7v4H4L2.81 7.69 8 2.5l5.19 5.19L12 14z"/></svg></a>
+                </span>
+
+            </p>
+        </div>
+    </template>
+
+    <footer>
+        <span class="made-with-heart">
+            <svg xmlns="http://www.w3.org/2000/svg" class="octicon" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M0 12v3h3l8-8-3-3-8 8zm3 2H1v-2h1v1h1v1zm10.3-9.3L12 6 9 3l1.3-1.3a.996.996 0 0 1 1.41 0l1.59 1.59c.39.39.39 1.02 0 1.41z"/></svg> with <svg xmlns="http://www.w3.org/2000/svg" class="octicon octicon-red" width="12" height="16" viewBox="0 0 12 16"><path fill-rule="evenodd" d="M9 2c-.97 0-1.69.42-2.2 1-.51.58-.78.92-.8 1-.02-.08-.28-.42-.8-1-.52-.58-1.17-1-2.2-1-1.632.086-2.954 1.333-3 3 0 .52.09 1.52.67 2.67C1.25 8.82 3.01 10.61 6 13c2.98-2.39 4.77-4.17 5.34-5.33C11.91 6.51 12 5.5 12 5c-.047-1.69-1.342-2.913-3-3z"/></svg> by Nidolai.
+        </span>
+    </footer>
+
+    <script src="assets/js/nidolai.io.js"></script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+:root {
+    --primary-color: #111;
+    --secondary-color: #212121;
+    --primary-font-color: #EDEDED;
+    --secondary-font-color: #BE3C28;
+    --outline-color: #595959;
+    --icon1-color: #67BC7B;
+    --icon2-color: #FFC107;
+}
+
+[data-theme="light"] {
+    --primary-color: #EDEDED;
+    --secondary-color: #FFFFFF;
+    --primary-font-color: #212121;
+    --secondary-font-color: #BE3C28;
+    --outline-color: #595959;
+    --icon1-color: #269f42;
+    --icon2-color: #FF8000;
+}
+
+html {
+    background: var(--primary-color);
+    font: normal normal 16px/1.6 "Helvetica Neue", helvetica, arial, sans-serif;
+}
+
+body {
+    max-width: 80em;
+    margin: 0 auto;
+    padding: 2em 1em;
+    color: var(--primary-font-color);
+}
+
+h1 {
+    text-align: center;
+    margin: 0px;
+    font-size: 3em;
+    color: var(--secondary-font-color);
+}
+
+a {
+    color: var(--secondary-font-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--primary-font-color);
+    outline: none;
+    text-decoration: underline;
+}
+
+.octicon {
+    display: inline-block;
+    vertical-align: text-top;
+    fill: currentColor;
+}
+
+.octicon-red {
+    fill: var(--secondary-font-color);
+}
+
+.repos {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1em;
+}
+
+.repo {
+    background-color: var(--secondary-color);
+    border: 1px solid var(--outline-color);
+    border-radius: 8px;
+    padding: 1em;
+    width: 10em;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.repo .space {
+    margin: 0 0.4em;
+}
+
+.repo .name {
+    display: block;
+    font-weight: 700;
+}
+
+.repo .desc {
+    flex: 1 1 auto;
+}
+
+.repo .info {
+    margin: 0px;
+}
+
+.repo .language {
+    color: var(--icon1-color);
+    font-weight: 600;
+}
+
+.repo .watch {
+    color: var(--icon2-color);
+    font-weight: 600;
+}
+
+.repo .star {
+    color: var(--icon2-color);
+    font-weight: 600;
+}
+
+.repo .fork {
+    color: var(--icon2-color);
+    font-weight: 600;
+}
+
+.repo .homepage[href=""] {
+    display: none;
+}
+
+footer {
+    color: var(--primary-font-color);
+    margin-top: 1em;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* #region Switch */
+
+.switch {
+    position: relative;
+    display: block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #CCCCCC;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background: #FFFFFF;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+   -webkit-transform: translateX(26px);
+   -ms-transform: translateX(26px);
+   transform: translateX(26px) 
+}
+
+/* #endregion Switch */
