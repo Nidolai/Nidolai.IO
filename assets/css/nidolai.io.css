@@ -1,7 +1,7 @@
 :root {
-    --primary-color: #111;
+    --primary-color: #111111;
     --secondary-color: #212121;
-    --primary-font-color: #EDEDED;
+    --primary-font-color: #FFFFFF;
     --secondary-font-color: #BE3C28;
     --outline-color: #595959;
     --icon1-color: #67BC7B;
@@ -21,20 +21,17 @@
 html {
     background: var(--primary-color);
     font: normal normal 16px/1.6 "Helvetica Neue", helvetica, arial, sans-serif;
+    color: var(--primary-font-color);
+    justify-content: center;
+    display: flex;
+    height: 100%;
 }
 
 body {
-    max-width: 80em;
-    margin: 0 auto;
-    padding: 2em 1em;
-    color: var(--primary-font-color);
-}
-
-h1 {
-    text-align: center;
-    margin: 0px;
-    font-size: 3em;
-    color: var(--secondary-font-color);
+    display: flex;
+    margin: 0 1em;
+    padding: 1em 0;
+    justify-content: center;
 }
 
 a {
@@ -44,8 +41,6 @@ a {
 
 a:hover {
     color: var(--primary-font-color);
-    outline: none;
-    text-decoration: underline;
 }
 
 .octicon {
@@ -60,8 +55,9 @@ a:hover {
 
 .repos {
     display: flex;
+    margin: auto;
+    max-width: 90vw;
     flex-wrap: wrap;
-    margin-top: 1em;
 }
 
 .repo {
@@ -69,7 +65,7 @@ a:hover {
     border: 1px solid var(--outline-color);
     border-radius: 8px;
     padding: 1em;
-    width: 10em;
+    width: 30em;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -118,19 +114,21 @@ a:hover {
 }
 
 footer {
-    color: var(--primary-font-color);
+    position: fixed;
     margin-top: 1em;
     text-align: center;
     font-size: 14px;
+    align-self: flex-end;
 }
 
 /* #region Switch */
 
 .switch {
-    position: relative;
+    position: absolute;
     display: block;
     width: 60px;
     height: 34px;
+    right: 5px;
 }
 
 .switch input {
@@ -155,7 +153,6 @@ footer {
     content: "";
     height: 26px;
     width: 26px;
-    left: 5px;
     bottom: 2px;
     -webkit-transition: .4s;
     transition: .4s;
@@ -168,9 +165,9 @@ input:checked + .slider {
 }
 
 input:checked + .slider:before {
-    -webkit-transform: translateX(20px);
-    -ms-transform: translateX(20px);
-    transform: translateX(20px);
+    -webkit-transform: translateX(28px);
+    -ms-transform: translateX(28px);
+    transform: translateX(28px);
     background-image: url('data:image/svg+xml;utf8,<svg aria-hidden="true" style="color: orange;" focusable="false" data-prefix="fas" data-icon="sun" class="svg-inline--fa fa-sun fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 160c-52.9 0-96 43.1-96 96s43.1 96 96 96 96-43.1 96-96-43.1-96-96-96zm246.4 80.5l-94.7-47.3 33.5-100.4c4.5-13.6-8.4-26.5-21.9-21.9l-100.4 33.5-47.4-94.8c-6.4-12.8-24.6-12.8-31 0l-47.3 94.7L92.7 70.8c-13.6-4.5-26.5 8.4-21.9 21.9l33.5 100.4-94.7 47.4c-12.8 6.4-12.8 24.6 0 31l94.7 47.3-33.5 100.5c-4.5 13.6 8.4 26.5 21.9 21.9l100.4-33.5 47.3 94.7c6.4 12.8 24.6 12.8 31 0l47.3-94.7 100.4 33.5c13.6 4.5 26.5-8.4 21.9-21.9l-33.5-100.4 94.7-47.3c13-6.5 13-24.7.2-31.1zm-155.9 106c-49.9 49.9-131.1 49.9-181 0-49.9-49.9-49.9-131.1 0-181 49.9-49.9 131.1-49.9 181 0 49.9 49.9 49.9 131.1 0 181z"></path></svg>');
 }
 
