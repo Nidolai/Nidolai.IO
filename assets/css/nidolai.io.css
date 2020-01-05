@@ -4,8 +4,7 @@
     --primary-font-color: #FFFFFF;
     --secondary-font-color: #BE3C28;
     --outline-color: #595959;
-    --icon1-color: #67BC7B;
-    --icon2-color: #FFC107;
+    --language-color: #67BC7B;
 }
 
 [data-theme="light"] {
@@ -14,33 +13,23 @@
     --primary-font-color: #212121;
     --secondary-font-color: #BE3C28;
     --outline-color: #595959;
-    --icon1-color: #269f42;
-    --icon2-color: #FF8000;
+    --language-color: #269f42;
 }
 
 html {
     background: var(--primary-color);
-    font: normal normal 16px/1.6 "Helvetica Neue", helvetica, arial, sans-serif;
     color: var(--primary-font-color);
-    justify-content: center;
     display: flex;
     height: 100%;
 }
 
 body {
+    max-width: 60em;
     display: flex;
-    margin: 0 1em;
-    padding: 1em 0;
+    margin: 0 auto;
+    padding: 1em;
     justify-content: center;
-}
-
-a {
-    color: var(--secondary-font-color);
-    text-decoration: none;
-}
-
-a:hover {
-    color: var(--primary-font-color);
+    font: normal normal 16px/1.6 "Helvetica Neue", helvetica, arial, sans-serif;
 }
 
 .octicon {
@@ -56,7 +45,6 @@ a:hover {
 .repos {
     display: flex;
     margin: auto;
-    max-width: 90vw;
     flex-wrap: wrap;
 }
 
@@ -65,58 +53,46 @@ a:hover {
     border: 1px solid var(--outline-color);
     border-radius: 8px;
     padding: 1em;
-    width: 30em;
+    width: 20em;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    margin: 0.5em;
+    margin: .3em;
+    text-decoration: none;
 }
 
-.repo .space {
-    margin: 0 0.4em;
+.repo:hover .name {
+    color: var(--primary-font-color);
+    text-decoration: underline;
 }
 
 .repo .name {
+    margin: 0;
     display: block;
     font-weight: 700;
 }
 
 .repo .desc {
+    color: var(--primary-font-color);
     flex: 1 1 auto;
 }
 
 .repo .info {
-    margin: 0px;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
 }
 
 .repo .language {
-    color: var(--icon1-color);
-    font-weight: 600;
+    color: var(--language-color);
 }
 
-.repo .watch {
-    color: var(--icon2-color);
-    font-weight: 600;
-}
-
-.repo .star {
-    color: var(--icon2-color);
-    font-weight: 600;
-}
-
-.repo .fork {
-    color: var(--icon2-color);
-    font-weight: 600;
-}
-
-.repo .homepage[href=""] {
-    display: none;
+a {
+    color: var(--secondary-font-color);
 }
 
 footer {
     position: fixed;
-    margin-top: 1em;
-    text-align: center;
     font-size: 14px;
     align-self: flex-end;
 }

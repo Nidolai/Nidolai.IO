@@ -33,15 +33,10 @@ toggleSwitch.addEventListener('change', switchTheme, false);
             var repoTemplate = document.getElementById("repo-template");
 
             data.forEach((repo) => {
-                var nameLink = repoTemplate.content.querySelector(".name");
-                nameLink.textContent = repo.name;
-                nameLink.href = repo.html_url;
+                repoTemplate.content.querySelector(".repo").href = repo.html_url;
+                repoTemplate.content.querySelector(".name").textContent = repo.name;
                 repoTemplate.content.querySelector(".desc").textContent = repo.description;
                 repoTemplate.content.querySelector(".language").innerHTML = repo.language;
-                repoTemplate.content.querySelector(".watch").innerHTML = repo.watchers_count;
-                repoTemplate.content.querySelector(".star").innerHTML = repo.stargazers_count;
-                repoTemplate.content.querySelector(".fork").innerHTML = repo.forks_count;
-                repoTemplate.content.querySelector(".homepage").href = repo.homepage || "";
 
                 var clone = document.importNode(repoTemplate.content, true);
                 docFrag.appendChild(clone);
